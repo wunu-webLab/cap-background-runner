@@ -1,5 +1,5 @@
 {
-  "name": "@wunu/background-runner",
+  "name": "@capacitor/background-runner",
   "version": "2.0.0",
   "description": "Capacitor Background Runner",
   "main": "dist/plugin.cjs.js",
