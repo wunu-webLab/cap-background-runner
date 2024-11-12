@@ -24,5 +24,8 @@
     "publish:release-from-prerelease": "lerna publish --conventional-graduate --conventional-commits --dist-tag latest --force-publish --no-verify-access --yes",
     "publish:latest": "lerna publish from-package --dist-tag latest --force-publish --no-verify-access --yes",
     "version": "changeset version && cp -R packages/capacitor-plugin/CHANGELOG.md CHANGELOG.md"
+  },
+  "publishConfig": {
+    "@wunu-webLab:regestry": "https://npm.pkg.github.com"
   }
 }

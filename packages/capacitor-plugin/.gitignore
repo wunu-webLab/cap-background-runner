@@ -1,7 +1,3 @@
-# node files
-dist
-node_modules
-
 # iOS files
 Pods
 Podfile.lock
@@ -60,3 +56,6 @@ captures
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
+
+.eslintignore
+.Aü
