@@ -210,7 +210,7 @@ In `capacitor.config.json`:
 In `capacitor.config.ts`:
 
 ```ts
-/// <reference types="@capacitor/background-runner" />
+/// <reference types="@wunu-weblab/background-runner" />
 
 import { CapacitorConfig } from '@capacitor/cli';
 

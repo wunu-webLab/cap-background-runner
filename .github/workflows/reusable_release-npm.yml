@@ -58,8 +58,7 @@ jobs:
       - name: 'RC Release'
         if: "!inputs.create-dev-release && inputs.create-rc-release"
         shell: bash
-        env: 
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        env:
           GH_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
         run: |
           pnpm run publish:rc
@@ -67,8 +66,7 @@ jobs:
       - name: 'Release from PreRelease'
         if: ${{ !inputs.create-dev-release && !inputs.create-rc-release && env.releasetype == 'prerelease' }}
         shell: bash
-        env: 
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        env:
           GH_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
         run: |
           pnpm run publish:release-from-prerelease

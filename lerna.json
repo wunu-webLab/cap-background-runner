@@ -17,6 +17,9 @@
       "createRelease": "github",
       "message": "Release %s",
       "tagVersionPrefix": ""
+    },
+    "publish": {
+      "registry": "https://npm.pkg.github.com"
     }
   }
 }
