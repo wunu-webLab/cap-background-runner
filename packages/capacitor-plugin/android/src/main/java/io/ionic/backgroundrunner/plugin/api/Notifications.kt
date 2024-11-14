@@ -155,8 +155,7 @@ class Notifications(context: Context) : NotificationsAPI {
     private fun getDefaultSmallIcon(): Int {
         if (defaultSmallIconID != AssetUtil.RESOURCE_ID_ZERO_VALUE) return defaultSmallIconID
         var resId = AssetUtil.RESOURCE_ID_ZERO_VALUE
-        var smallIconConfigResourceName = config.getString("smallIcon")
-        smallIconConfigResourceName = AssetUtil.getResourceBaseName(smallIconConfigResourceName)
+        smallIconConfigResourceName = AssetUtil.getResourceBaseName("ic_notif")
         if (smallIconConfigResourceName != null) {
             resId = AssetUtil.getResourceID(context, smallIconConfigResourceName, "drawable")
         }
