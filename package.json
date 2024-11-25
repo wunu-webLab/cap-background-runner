@@ -19,7 +19,8 @@
     "build": "nx run-many --target=build && nx run-many --target=build-docs",
     "fmt": "nx run-many --target=fmt",
     "lint": "nx run-many --target=lint",
-    "version": "changeset version && cp -R packages/capacitor-plugin/CHANGELOG.md CHANGELOG.md"
+    "version": "changeset version && cp -R packages/capacitor-plugin/CHANGELOG.md CHANGELOG.md",
+    "copy-cap": "rsync -av --exclude='README.md' --exclude='CHANGELOG.md' --exclude='LICENSE' --exclude='CONTRIBUTING.md' --exclude='API.md' packages/capacitor-plugin/ cap-plugin"
   },
   "publishConfig": {
     "@wunu-webLab:registry": "https://npm.pkg.github.com"

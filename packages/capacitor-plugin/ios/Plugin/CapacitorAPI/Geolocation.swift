@@ -32,7 +32,7 @@ class CapacitorGeolocation: NSObject, CapacitorGeolocationExports, CLLocationMan
         self.context = context
         self.locationManager.delegate = self
 
-        self.locationManager.allowsBackgroundLocationUpdates = true
+        self.locationManager.allowsBackgroundLocationUpdates = false
         self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         self.locationManager.pausesLocationUpdatesAutomatically = false
     }

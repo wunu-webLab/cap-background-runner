@@ -18,14 +18,10 @@ public class BackgroundRunnerPlugin: CAPPlugin {
     }
 
     @objc override public func checkPermissions(_ call: CAPPluginCall) {
-        // check geolocation permissions
-        let geolocationState = CapacitorGeolocation.checkPermission()
-
         // check notification permissions
         let notificationState = CapacitorNotifications.checkPermission()
 
         call.resolve([
-            "geolocation": geolocationState,
             "notifications": notificationState
         ])
     }
@@ -37,13 +33,6 @@ public class BackgroundRunnerPlugin: CAPPlugin {
             do {
                 if permissions.contains("notifications") {
                     try CapacitorNotifications.requestPermission()
-                }
-
-                if permissions.contains("geolocation") {
-                    let geolocation = CapacitorGeolocation()
-                    print("geolocation requested...")
-                    try await geolocation.requestPermission()
-                    print("geolocation requested...done")
                 }
 
                 self.checkPermissions(call)
@@ -139,19 +128,6 @@ public class BackgroundRunnerPlugin: CAPPlugin {
         }
 
         var events: [String: [String: Any]?] = [:]
-
-        if launchOptions[.location] != nil {
-            // application was launched for a location event
-            var details: [String: Any] = [:]
-            details["locations"] = nil
-
-            if let location = CapacitorGeolocation.getCurrentKnownLocation() {
-                var details: [String: Any] = [:]
-                details["locations"] = [location]
-            }
-
-            events["currentLocation"] = details
-        }
 
         print("emit events: \(events)")
 
